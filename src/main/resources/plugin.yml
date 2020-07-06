@@ -1,0 +1,13 @@
+name: BasicTools
+version: 0.1-SNAPSHOT
+main: me.b1ackange1.basictools.BasicToolsPlugin
+depend: [Kotlin, Tap]
+author: BlackAnge1
+api-version: '1.13'
+commands:
+  hello:
+    usage: /<command>
+    description: Hello?
+  gm:
+    usage: /<command>
+    description: Change gamemode.
