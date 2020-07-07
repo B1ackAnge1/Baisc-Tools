@@ -14,22 +14,34 @@ class Gamemode : CommandExecutor, TabCompleter {
             if (args.count() == 1) {
                 args[0].toIntOrNull()?.let {
                     when (it) {
-                        0 -> sender.gameMode = GameMode.SURVIVAL
-                        1 -> sender.gameMode = GameMode.CREATIVE
-                        2 -> sender.gameMode = GameMode.ADVENTURE
-                        3 -> sender.gameMode = GameMode.SPECTATOR
+                        0 -> {
+                            if(sender.gameMode == GameMode.SURVIVAL) return true
+                            sender.gameMode = GameMode.SURVIVAL
+                        }
+                        1 -> {
+                            if(sender.gameMode == GameMode.CREATIVE) return true
+                            sender.gameMode = GameMode.CREATIVE
+                        }
+                        2 -> {
+                            if(sender.gameMode == GameMode.ADVENTURE) return true
+                            sender.gameMode = GameMode.ADVENTURE
+                        }
+                        3 -> {
+                            if(sender.gameMode == GameMode.SPECTATOR) return true
+                            sender.gameMode = GameMode.SPECTATOR
+                        }
                         else -> {
-                            sender.sendMessage("are you mad?")
+                            sender.sendMessage("you serious?")
                             return true
                         }
                     }
                     sender.sendMessage("Set own gamemode to ${sender.gameMode.name.toLowerCase().capitalize()} Mode")
-                }?: sender.sendMessage("do you know number")
+                } ?: sender.sendMessage("d0 yo0 no numbar?")
             } else {
                 sender.sendMessage("Nope")
             }
         } else {
-            sender.sendMessage("are you human?")
+            sender.sendMessage("omae wa mou shindeiru!!(You are not a player.)")
         }
         return true
     }
