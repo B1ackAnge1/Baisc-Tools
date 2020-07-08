@@ -1,6 +1,6 @@
-name: BasicTools
-version: 0.1-SNAPSHOT
-main: me.b1ackange1.basictools.BasicToolsPlugin
+name: $PluginName
+version: $PluginVersion
+main: $PluginMain
 depend: [Kotlin, Tap]
 author: BlackAnge1
 api-version: '1.13'
@@ -10,4 +10,4 @@ commands:
     description: Hello?
   gm:
     usage: /<command>
-    description: Change gamemode.
+    description: Reference of Essentials. Change gamemode.
